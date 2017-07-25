@@ -1,0 +1,614 @@
+@font-face {
+  font-family: "roboto";
+  src:  url("../fonts/roboto.woff2") format("woff2"),
+        url("../fonts/roboto.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "roboto";
+  src:  url("../fonts/robotobold.woff2") format("woff2"),
+        url("../fonts/robotobold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "roboto";
+  src:  url("../fonts/robotomedium.woff2"),
+        url("../fonts/robotomedium.woff2");
+  font-weight: 500;/*medium*/
+  font-style: normal;
+}
+
+body {
+  background-color: #849d8f;
+  min-width: 900px;
+  color: white;
+}
+
+body > input[type="radio"] {
+  display: none;
+}
+
+h1 {
+  margin: 0;
+  font-family: "roboto", sans-serif;
+  font-weight: bold;
+  font-size: 60px;
+  line-height: 60.35px;
+}
+
+h2 {
+  font-family: "roboto", sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 30px;
+}
+
+.site-wrapper {
+  min-width: 1200px;
+  background-color: #849d8f;
+  background-image: url("../img/icecreme-1-light.png");
+  background-repeat: no-repeat;
+  background-position: top center;
+  transition: background-image 0.5s ease, background-color 0.5s ease;
+}
+
+/* Псевдоэлементы с изображениями нужны только для предзагрузки картинок, чтобы
+ они уже были в кеше в момент переключения слайдов и сразу отображались */
+
+.site-wrapper::before,
+.site-wrapper::after {
+  content: "";
+  visibility: hidden;
+}
+
+.site-wrapper::before {
+  background-image: url("../img/icecreme-2-light.png");
+}
+
+.site-wrapper::after {
+  background-image: url("../img/icecreme-3-light.png");
+}
+
+.content-wrapper {
+  width: 1145px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+/************************шапка************************************************/
+.page-header {
+  padding-top: 4px;
+}
+
+.page-header .header-top {
+  display: flex;
+}
+
+.header-logo {
+  margin-right: 24px;
+  margin-top: 4px;
+}
+
+.page-header nav {
+  display: flex;
+}
+
+.page-header .page-navigation {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.page-navigation li {
+  margin-right: 28px;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.page-navigation a {
+  text-decoration: none;
+  font-family: "roboto", sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 18px;
+  color: inherit;
+}
+
+.page-header .user-blocks {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.user-blocks a {
+  margin-right: 10px;
+  position: relative;
+}
+
+.user-blocks a:last-child {
+  margin-right: 0;
+}
+
+.user-blocks .search {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 0;
+  background-color: rgba(255,255,255,0.2);
+}
+
+.user-blocks .search::before {
+  position: absolute;
+  content: "";
+  width: 32px;
+  height: 32px;
+  top: 7px;
+  left: 8px;
+
+  background-image: url("../img/search-icon.png");
+  background-repeat: no-repeat;
+}
+
+.user-blocks .login {
+  width: 92px;
+  height: 32px;
+  padding-right: 16px;
+  padding-top: 8px;
+  box-sizing: border-box;
+  border-radius: 16px;
+  font-size: 14px;
+  line-height: 16px;
+  font-family: "roboto", sans-serif;
+  font-weight: 500;
+  color: inherit;
+  text-align: right;
+  text-decoration: none;
+  background-color: rgba(255,255,255,0.2);
+}
+
+.user-blocks .basket {
+  width: 117px;
+  height: 32px;
+  padding-right: 34px;
+  padding-top: 8px;
+  box-sizing: border-box;
+  border-radius: 16px;
+  font-size: 14px;
+  line-height: 16px;
+  font-family: "roboto", sans-serif;
+  font-weight: 500;
+  color: inherit;
+  text-align: right;
+  text-decoration: none;
+  background-color: rgba(255,255,255,0.2);
+}
+
+.page-header .header-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.header-bottom p {
+  margin: 0;
+  padding: 0;
+}
+
+.header-bottom .work-time {
+  margin-bottom: 2px;
+  font-family: "roboto", sans-serif;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: bold;
+  color: inherit;
+}
+
+.header-bottom .phone-number {
+  font-family: "roboto",sans-serif;
+  font-size: 22px;
+  line-height: 24px;
+  font-weight: bold;
+  color: inherit;
+}
+/************************ стилизация тела страницы (слайдер) ******************/
+.main .slider {
+  position: relative;
+  margin-bottom: 41px;
+  text-align: center;
+}
+
+.main .slide {
+  display: none;
+}
+
+.main .slide-title {
+  margin: 0 auto;
+  padding-top: 270px;
+  padding-bottom: 34px;
+  max-width: 700px;
+  font-family: "roboto", sans-serif;
+  font-weight: bold;
+  font-size: 60px;
+  line-height: 60.35px;
+  text-align: center;
+}
+
+.main .btn {
+  font-family: "roboto", sans-serif;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.main .slide-btn {
+  display: inline-block;
+  padding: 12px 50px;
+
+  font-weight: 600;
+  font-size: 31px;
+  line-height: 41px;
+  vertical-align: top;
+  text-decoration: none;
+  text-shadow: 0 2px 5px rgba(160, 32, 11, 0.76);
+
+  background: #f26843;
+  background:    -moz-linear-gradient(top, #f26843 0%, #e74a35 100%);
+  background: -webkit-linear-gradient(top, #f26843 0%, #e74a35 100%);
+  background:         linear-gradient(to bottom, #f26843 0%, #e74a35 100%);
+  border-radius: 100px;
+  box-shadow: 0 2px 2px rgba(172, 16, 0, 0.64);
+}
+
+.main .slide-btn:hover {
+  background:    -moz-linear-gradient(top, #f58669 0%, #ec6f5e 100%);
+  background: -webkit-linear-gradient(top, #f58669 0%, #ec6f5e 100%);
+  background:         linear-gradient(to bottom, #f58669 0%, #ec6f5e 100%);
+  box-shadow: 0 2px 2px rgba(172, 16, 0, 1);
+}
+
+.main .slide-btn:active {
+  background:    -moz-linear-gradient(top, #d84732 0%, #e1613e 100%);
+  background: -webkit-linear-gradient(top, #d84732 0%, #e1613e 100%);
+  background:         linear-gradient(to bottom, #d84732 0%, #e1613e 100%);
+  box-shadow: inset 0 2px 2px rgba(172, 16, 0, 1);
+}
+
+.slider-controls {
+  position: absolute;
+  bottom: 23px;
+  left: 0px;
+  z-index: 20;
+
+  font-size: 0;
+}
+
+.slider-controls label {
+  display: inline-block;
+  width: 17px;
+  height: 17px;
+  margin-right: 8px;
+
+  vertical-align: top;
+
+  background-color: transparent;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#btn-1:checked ~ .site-wrapper #slide1,
+#btn-2:checked ~ .site-wrapper #slide2,
+#btn-3:checked ~ .site-wrapper #slide3 {
+  display: block;
+}
+
+#btn-1:checked ~ .site-wrapper {
+  background-color: #849d8f;
+  background-image: url("../img/icecreme-1-light.png");
+}
+
+#btn-2:checked ~ .site-wrapper {
+  background-color: #8996a6;
+  background-image: url("../img/icecreme-2-light.png");
+}
+
+#btn-3:checked ~ .site-wrapper {
+  background-color: #9d8b84;
+  background-image: url("../img/icecreme-3-light.png");
+}
+
+#btn-1:checked ~ .site-wrapper label[for="btn-1"],
+#btn-2:checked ~ .site-wrapper label[for="btn-2"],
+#btn-3:checked ~ .site-wrapper label[for="btn-3"] {
+  background-color: #ffffff;
+}
+
+/******************стилизация тела страницы (баннеры)***************************/
+.banners {
+  display: flex;
+  justify-content: space-between;
+  flex-basis: 420px;
+  margin-bottom: 40px;
+}
+
+.banners .left {
+  background-image: url("../img/raspberry-bg.png");
+  background-repeat: no-repeat;
+}
+
+.banners .right {
+  background-image: url("../img/shocolate-bg.png");
+  background-repeat: no-repeat;
+}
+
+.banner-item {
+  display: flex;
+  flex-direction: column;
+  padding-top: 13px;
+  padding-left: 20px;
+  padding-right: 20px;
+  max-width: 560px;
+  box-sizing: border-box;
+  border-radius: 12px 12px 12px 12px;
+}
+
+.banner-item em {
+  margin-bottom: 16px;
+  font-family: "roboto", sans-serif;
+  font-style: normal;
+  font-size: 35px;
+  line-height: 41px;
+  color: inherit;
+  font-weight: bold;
+}
+
+.banner-item p {
+  margin: 0;
+  margin-bottom: 44px;
+  font-family: "roboto", sans-serif;
+  font-size: 18px;
+  line-height: 22px;
+  color: inherit;
+  font-weight: bold;
+}
+
+.banner-item .btn {
+  display: inline-block;
+  align-self: flex-end;
+  margin-bottom: 23px;
+  padding-top: 10px;
+  padding-left: 22px;
+  padding-right: 22px;
+  box-sizing: border-box;
+  height: 47px;
+  border-radius: 100px;
+  background: #f26843;
+  background: linear-gradient( to top, rgb(231,74,53) 0%, rgb(242,104,67) 100%);
+  font-family: "roboto", sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 0 2px 5px rgba(160, 32, 11, 0.76);
+  box-shadow: 0 2px 2px rgba(172, 16, 0, 0.64);
+}
+
+/******************стилизация тела страницы (hits)*******************************/
+.hits {
+  margin-bottom: 40px;
+}
+
+.hits ul {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hits li {
+  position: relative;
+  max-width: 267px;
+}
+
+.hits li::before {
+  content: "";
+  position: absolute;
+  width: 61px;
+  height: 61px;
+  background-image: url("../img/hit-icon.jpg");
+  left: 0;
+  border-radius: 50%;
+}
+
+.hits img {
+  border-radius: 100%;
+  margin-bottom: 10px;
+}
+
+.hits b {
+  position: absolute;
+  bottom: 67px;
+  left: 0;
+  font-family: "roboto", sans-serif;
+  font-weight: bold;
+  font-size: 45px;
+  line-height: 45px;
+}
+
+.hits small {
+  font-size: 30px;
+  line-height: 45px;
+}
+
+.hits p {
+  margin: 0;
+  padding: 0;
+  font-family: "roboto", sans-serif;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 500;
+  text-align: center;
+  /*text-decoration: underline;
+  text-decoration-color: rgba(255,255,255,0.2);*/
+}
+
+.underline {
+  background-image: linear-gradient(to right, rgba(255,255,255,0.2), rgba(255,255,255,0.2) );
+  background-position: 0 1.04em;
+  background-repeat: repeat-x;
+  background-size: 8px 3px;
+}
+
+/******************стилизация тела страницы (seo)*******************************/
+.seo {
+  padding-top: 20px;
+  padding-left: 21px;
+  padding-right: 21px;
+  margin-bottom: 40px;
+  color: black;
+  background-image: url("../img/wafer-bg.jpg");
+  border-radius: 14px;
+}
+
+.seo h2 {
+  margin: 0;
+  margin-bottom: 24px;
+  padding: 0;
+}
+
+.seo ul {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.seo li {
+  position: relative;
+}
+
+.seo p {
+  margin: 0;
+  margin-bottom: 22px;
+  padding-left: 55px;
+  box-sizing: border-box;
+  max-width: 535px;
+  font-family: "roboto", sans-serif;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.seo p::before {
+  content: "";
+  position: absolute;
+  width: 48px;
+  height: 49px;
+  left: 0;
+  top:-13px;
+}
+
+.seo .seo-icecreme::before {
+  background-image: url("../img/icecreme-icon.png");
+  background-repeat: no-repeat;
+}
+
+.seo .seo-cow::before {
+  background-image: url("../img/cow-icon.png");
+  background-repeat: no-repeat;
+}
+
+.seo .seo-leaf::before {
+  background-image: url("../img/leaf-icon.png");
+  background-repeat: no-repeat;
+}
+
+.seo .seo-thermometer::before {
+  background-image: url("../img/thermometer-icon.png");
+  background-repeat: no-repeat;
+}
+
+/******************стилизация тела страницы (news)*******************************/
+
+.news {
+  display: inline-block;
+  width: 560px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-right: 21px;
+  box-sizing: border-box;
+  background-image: url("../img/strawberry-bg.jpg");
+  color: black;
+  border-radius: 13px;
+}
+
+.news h3 {
+  margin: 0;
+  padding: 0;
+  margin-top: 26px;
+  font-family: "roboto", sans-serif;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 500;
+}
+
+.news p {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 82px;
+  width: 285px;
+  font-family: "roboto", sans-serif;
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/******************стилизация тела страницы (mailing)*******************************/
+
+.mailing {
+  display: inline-block;
+  width: 560px;
+  padding: 6px;
+  box-sizing: border-box;
+  font-size: 0px;
+  vertical-align: top;
+  background-color: #f8f7f4;
+  background-image: url("../img/mail-bg.png");
+  color: black;
+  border-radius: 13px;
+}
+
+.mailing form {
+  padding-top: 32px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 35px;
+  font-size: 16px;
+  line-height: 22px;
+  background-color: #f8f7f4;
+}
+
+.mailing label {
+  margin-bottom: 30px;
+  font-family: "roboto", sans-serif;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: normal;
+}
+
+.mailing input {
+  display: inline-block;
+  margin-top:38px;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.mailing .btn {
+  display: inline-block;
+}
