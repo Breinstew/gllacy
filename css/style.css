@@ -574,6 +574,7 @@ h2 {
 .mailing {
   display: inline-block;
   width: 560px;
+  margin-bottom: 40px;
   padding: 6px;
   box-sizing: border-box;
   font-size: 0px;
@@ -585,7 +586,7 @@ h2 {
 }
 
 .mailing form {
-  padding-top: 32px;
+  padding-top: 30px;
   padding-left: 20px;
   padding-right: 20px;
   padding-bottom: 35px;
@@ -604,11 +605,37 @@ h2 {
 
 .mailing input {
   display: inline-block;
-  margin-top:38px;
+  width: 368px;
+  padding-left: 14px;
+  padding-top: 10px;
+  padding-bottom: 8px;
+  box-sizing: border-box;
+  margin-top: 34px;
+  margin-right: 8px;
   font-size: 16px;
-  line-height: 22px;
+  line-height: 24px;
+  border-color: #d3d3d2;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 5px;
 }
 
 .mailing .btn {
   display: inline-block;
+  padding-left: 18px;
+  padding-right: 18px;
+  box-sizing: border-box;
+  height: 44px;
+  border-radius: 100px;
+  background: #f26843;
+  background: linear-gradient( to top, rgb(231,74,53) 0%, rgb(242,104,67) 100%);
+  font-family: "roboto", sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 0 2px 5px rgba(160, 32, 11, 0.76);
+  box-shadow: 0 2px 2px rgba(172, 16, 0, 0.64);
+  color: white;
+  border: none;
 }
