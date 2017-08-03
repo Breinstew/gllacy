@@ -581,8 +581,10 @@ h2 {
   vertical-align: top;
   background-color: #f8f7f4;
   background-image: url("../img/mail-bg.png");
+  background-repeat: no-repeat;
+  background-position: center;
   color: black;
-  border-radius: 13px;
+  border-radius: 15px;
 }
 
 .mailing form {
@@ -593,6 +595,7 @@ h2 {
   font-size: 16px;
   line-height: 22px;
   background-color: #f8f7f4;
+  border-radius: 13px;
 }
 
 .mailing label {
@@ -638,4 +641,71 @@ h2 {
   box-shadow: 0 2px 2px rgba(172, 16, 0, 0.64);
   color: white;
   border: none;
+}
+
+/**************************** Стилизация map ***************************************/
+
+.map {
+  position: relative;
+  margin-left: -27px;
+  width: 100%;
+}
+
+.information {
+  position: absolute;
+  top: 62px;
+  right: -29px;
+  width: 302px;
+  padding: 30px 25px;
+  box-sizing: border-box;
+  font-size: 14px;
+  line-height: 20px;
+  font-family: "roboto", sans-serif;
+  color: black;
+  background-color: white;
+  border-radius: 14px;
+}
+
+.information p {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 18px;
+}
+
+.information b {
+  display: block;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+}
+
+.information .for-order {
+  margin-bottom: 23px;
+}
+
+.information .phone {
+  font-size: 18px;
+  line-height: 22px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+.information .btn {
+  display: inline-block;
+  padding-top: 10px;
+  padding-left: 27px;
+  padding-right: 27px;
+  box-sizing: border-box;
+  height: 44px;
+  border-radius: 100px;
+  background: #f26843;
+  background: linear-gradient( to top, rgb(231,74,53) 0%, rgb(242,104,67) 100%);
+  font-family: "roboto", sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 0 2px 5px rgba(160, 32, 11, 0.76);
+  box-shadow: 0 2px 2px rgba(172, 16, 0, 0.64);
+  color: white;
 }
