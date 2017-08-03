@@ -709,3 +709,22 @@ h2 {
   box-shadow: 0 2px 2px rgba(172, 16, 0, 0.64);
   color: white;
 }
+
+/**********************Стилизация подвала**************************************/
+
+.page-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.page-footer .socials {
+  max-width: 267px;
+}
+
+.page-footer .meta {
+  max-width: 560px;
+}
+
+.page-footer .copyright {
+  max-width: 267px;
+}
