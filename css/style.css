@@ -457,7 +457,7 @@ h2 {
 
 .underline {
   background-image: linear-gradient(to right, rgba(255,255,255,0.2), rgba(255,255,255,0.2) );
-  background-position: 0 1.04em;
+  background-position: 0 1.05em;
   background-repeat: repeat-x;
   background-size: 8px 3px;
 }
@@ -714,17 +714,62 @@ h2 {
 
 .page-footer {
   display: flex;
+  min-height: 100px;
   justify-content: space-between;
+  align-items: center;
+  font-family: "roboto", sans-serif;
+  color: white;
+  font-size: 13px;
+  line-height: 18px;
 }
 
 .page-footer .socials {
-  max-width: 267px;
+  display: flex;
+  flex-basis: 267px;
+  font-size: 0;
+}
+
+.social-btn {
+  margin-right: 11px;
+  width: 38px;
+  height: 38px;
+  box-sizing: border-box;
+  border-radius: 50%;
+  border: 3px solid #c2cec7;
+  background-color: #e6ebe9;
 }
 
 .page-footer .meta {
-  max-width: 560px;
+  width: 560px;
+  font-size: 0;
+}
+
+.meta a {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 240px;
+  color: inherit;
+  text-decoration: none;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.meta a:nth-child(2n) {
+  margin-left: -8px;
+}
+
+.meta a:nth-child(2n+1) {
+  padding-left: 90px;
 }
 
 .page-footer .copyright {
   max-width: 267px;
+  padding-top: 30px;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.copyright a {
+  color: white;
+  text-decoration: none;
 }
