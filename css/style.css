@@ -168,6 +168,17 @@ h2 {
   background-color: rgba(255,255,255,0.2);
 }
 
+.user-blocks .login::before {
+  position: absolute;
+  content: "";
+  width: 21px;
+  height: 19px;
+  top: 5px;
+  left: 17px;
+  background-image: url("../img/login-icon.png");
+  background-repeat: no-repeat;
+}
+
 .user-blocks .basket {
   width: 117px;
   height: 32px;
@@ -184,6 +195,18 @@ h2 {
   text-decoration: none;
   background-color: rgba(255,255,255,0.2);
 }
+
+.user-blocks .basket::before {
+  position: absolute;
+  content: "";
+  width: 21px;
+  height: 20px;
+  top: 5px;
+  left: 17px;
+  background-image: url("../img/basket-icon.png");
+  background-repeat: no-repeat;
+}
+
 
 .page-header .header-bottom {
   display: flex;
@@ -735,13 +758,41 @@ h2 {
   height: 38px;
   box-sizing: border-box;
   border-radius: 50%;
-  border: 3px solid #c2cec7;
-  background-color: #e6ebe9;
+  border: 3px solid rgba(254, 254, 254, 0.5);
+  background-clip: content-box;
+  /*background-color: #e6ebe9;*/
+}
+
+.socials .social-btn-tw {
+  background-image: url("../img/tw-icon.png");
+}
+
+.socials .social-btn-inst {
+  background-image: url("../img/instg-icon.png");
+}
+
+.socials .social-btn-fb {
+  background-image: url("../img/fb-icon.png");
+}
+
+.socials .social-btn-vk {
+  background-image: url("../img/vk-icon.png");
 }
 
 .page-footer .meta {
+  position: relative;
   width: 560px;
   font-size: 0;
+}
+
+.meta-title::before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 68px;
+  width: 15px;
+  height: 13px;
+  background-image: url("../img/heart-icon.png");
 }
 
 .meta a {
@@ -763,6 +814,7 @@ h2 {
 }
 
 .page-footer .copyright {
+  position: relative;
   max-width: 267px;
   padding-top: 30px;
   font-size: 12px;
@@ -772,4 +824,14 @@ h2 {
 .copyright a {
   color: white;
   text-decoration: none;
+}
+
+.copyright::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 2px;
+  width: 108px;
+  height: 38px;
+  background-image: url("../img/html-academy.png");
 }
