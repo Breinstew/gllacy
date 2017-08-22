@@ -102,13 +102,20 @@ h2 {
   list-style: none;
 }
 
+.page-navigation a {
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
 
 .page-navigation > li {
   position: relative;
   margin-right: 28px;
-  border-bottom: 1px solid rgba(255,255,255,0.2);
+  padding-bottom: 10px;
+  padding-top: 10px;
 }
 
+.page-navigation > li:hover .sub-catalog {
+  display: block;
+}
 
 .page-navigation .main-catalog {
   text-decoration: none;
@@ -119,7 +126,7 @@ h2 {
   color: inherit;
 }
 
-.page-navigation .main-catalog:hover {
+.page-navigation > li:hover .main-catalog {
   padding: 4px 15px;
   margin-left: -15px;
   margin-right: -15px;
@@ -130,25 +137,23 @@ h2 {
   border-radius: 17px;
 }
 
-/*.main-catalog:first-child:hover + .sub-catalog {
-  display: block;
-}
-*/
+/******стилизация подменю Каталог**********/
 .page-navigation .sub-catalog {
   position: absolute;
-  display: block;
+  display: none;
   padding: 0;
-  top: 37px;
-  left: -7px;
+  top: 40px;
+  left: -20px;
   z-index: 10;
   width: 143px;
   background-color: #f7f6f3;
   list-style: none;
-  border-radius: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.4);
 }
 
 .sub-catalog li:last-child {
-  border-radius: 0 0 10px 10px;
+  border-radius: 0 0 5px 5px;
 }
 
 .sub-catalog a {
@@ -164,12 +169,26 @@ h2 {
   color: #323232;
 }
 
-.sub-catalog li:hover:not(:first-child) {
+.sub-catalog > li:hover:not(:first-child) {
+  position: relative;
   background-color: #fbded8;
   cursor: pointer;
 }
 
+.sub-catalog .sub-catalog-title {
+  font-weight: bold;
+}
+
+.sub-catalog .border {
+  position: absolute;
+  top: 37px;
+  left: 5px;
+  width: 130px;
+  border-bottom: 1px solid rgba(50, 50, 50, 0.2);
+}
+
 .page-header .user-blocks {
+  position: relative;
   display: flex;
   align-items: center;
   margin-left: auto;
@@ -183,6 +202,8 @@ h2 {
 .user-blocks a:last-child {
   margin-right: 0;
 }
+
+/******стилизация поля поиска**************/
 
 .user-blocks .search {
   width: 32px;
@@ -199,9 +220,35 @@ h2 {
   height: 32px;
   top: 7px;
   left: 8px;
-
   background-image: url("../img/search-icon.png");
   background-repeat: no-repeat;
+}
+
+.user-blocks .search-request {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 342px;
+  box-sizing: border-box;
+  background-color: #f8f7f4;
+  border-radius: 5px;
+  box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.4);
+}
+
+.user-blocks input[id="search-request"] {
+  margin: 20px 15px;
+  width: 309px;
+  box-sizing: border-box;
+  padding-left: 14px;
+  padding-top: 13px;
+  padding-bottom: 10px;
+  border: 1px solid #999999;
+  font-family: "roboto", sans-serif;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+  border-radius: 5px;
+  outline-radius: 15px;
 }
 
 .user-blocks .login {
