@@ -140,7 +140,7 @@ h2 {
   display: none;
   padding: 0;
   top: 40px;
-  left: -20px;
+  left: -5px;
   z-index: 10;
   width: 143px;
   background-color: #f7f6f3;
@@ -245,7 +245,6 @@ h2 {
   font-size: 14px;
   line-height: 24px;
   border-radius: 5px;
-  outline-radius: 15px;
 }
 
 .user-blocks .login {
