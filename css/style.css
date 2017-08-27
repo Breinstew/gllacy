@@ -210,6 +210,11 @@ h2 {
   background-color: rgba(255,255,255,0.2);
 }
 
+.user-blocks .search:hover,
+.user-blocks .search:focus {
+  background-color: #f7f6f3;
+}
+
 .user-blocks .search::before {
   position: absolute;
   content: "";
@@ -221,10 +226,16 @@ h2 {
   background-repeat: no-repeat;
 }
 
+.user-blocks .search:hover::before,
+.user-blocks .search:focus::before{
+  background-image: url("../img/search-icon-hover.png");
+}
+
 .user-blocks .search-request {
+  visibility: hidden;
   position: absolute;
   top: 60px;
-  left: 0;
+  right: 230px;
   width: 342px;
   box-sizing: border-box;
   background-color: #f8f7f4;
@@ -246,6 +257,14 @@ h2 {
   line-height: 24px;
   border-radius: 5px;
 }
+
+.user-blocks .search:hover ~ .search-request,
+.user-blocks .search:focus ~ .search-request,
+.user-blocks .search-request:hover,
+.user-blocks input[id="search-request"]:hover {
+  visibility: visible;
+}
+
 
 .user-blocks .login {
   width: 92px;
