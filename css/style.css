@@ -191,7 +191,8 @@ h2 {
   margin-left: auto;
 }
 
-.user-blocks a {
+.user-blocks a,
+.user-blocks label {
   margin-right: 10px;
   position: relative;
 }
@@ -203,6 +204,7 @@ h2 {
 /******стилизация поля поиска**************/
 
 .user-blocks .search {
+  position: relative;
   width: 32px;
   height: 32px;
   border-radius: 50%;
@@ -213,9 +215,10 @@ h2 {
 .user-blocks .search:hover,
 .user-blocks .search:focus {
   background-color: #f7f6f3;
+  cursor: pointer;
 }
 
-.user-blocks .search::before {
+.user-blocks .search::before{
   position: absolute;
   content: "";
   width: 32px;
@@ -234,8 +237,8 @@ h2 {
 .user-blocks .search-request {
   visibility: hidden;
   position: absolute;
-  top: 60px;
-  right: 230px;
+  top: 38px;
+  right: 0px;
   width: 342px;
   box-sizing: border-box;
   background-color: #f8f7f4;
@@ -258,13 +261,10 @@ h2 {
   border-radius: 5px;
 }
 
-.user-blocks .search:hover ~ .search-request,
-.user-blocks .search:focus ~ .search-request,
-.user-blocks .search-request:hover,
-.user-blocks input[id="search-request"]:hover {
+.search:hover .search-request,
+.search:focus .search-request {
   visibility: visible;
 }
-
 
 .user-blocks .login {
   width: 92px;
