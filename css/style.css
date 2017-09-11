@@ -47,6 +47,7 @@ h2 {
 
 .site-wrapper {
   min-width: 1200px;
+  box-sizing: content-box;
   background-color: #849d8f;
   background-image: url("../img/icecreme-1-light.png");
   background-repeat: no-repeat;
@@ -75,10 +76,13 @@ h2 {
   width: 1145px;
   margin: 0 auto;
   padding: 0 20px;
+  box-sizing: content-box;
 }
 /************************шапка************************************************/
 .page-header {
+  margin: 0;
   padding-top: 4px;
+  border-bottom: none;
 }
 
 .page-header .header-top {
@@ -114,6 +118,7 @@ h2 {
   padding-top: 10px;
   height: 32px;
   border-radius: 17px;
+  box-sizing: content-box;
 }
 
 .page-navigation > li:hover .sub-catalog {
@@ -216,6 +221,7 @@ h2 {
 .user-blocks .search:focus {
   background-color: #f7f6f3;
   cursor: pointer;
+  outline: none;
 }
 
 .user-blocks .search::before{
@@ -257,6 +263,7 @@ h2 {
   font-family: "roboto", sans-serif;
   font-weight: normal;
   font-size: 14px;
+  color: #999999;
   line-height: 24px;
   border-radius: 5px;
 }
@@ -283,6 +290,12 @@ h2 {
   background-color: rgba(255,255,255,0.2);
 }
 
+.user-blocks .login:hover,
+.user-blocks .login:focus {
+  background-color: #f7f6f3;
+  outline: none;
+}
+
 .user-blocks .login::before {
   position: absolute;
   content: "";
@@ -292,6 +305,109 @@ h2 {
   left: 17px;
   background-image: url("../img/login-icon.png");
   background-repeat: no-repeat;
+}
+
+.user-blocks .login:hover::before,
+.user-blocks .login:focus::before{
+  background-image: url("../img/login-icon-hover.png");
+  background-color: #f7f6f3;
+}
+
+.user-blocks .login-request {
+  display: none;
+  visibility: hidden;
+  position: absolute;
+  box-sizing: border-box;
+  top: 58px;
+  right: 125px;
+  z-index: 10;
+  width: 277px;
+  height: 214px;
+  background-color: #f8f7f4;
+  border-radius: 5px;
+  box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.4);
+}
+
+.user-blocks .login-request:hover {
+  display: block;
+  visibility: visible;
+  z-index: 10;
+}
+
+.user-blocks .login:hover ~ .login-request,
+.user-blocks .login:focus ~ .login-request {
+  display: block;
+  visibility: visible;
+  z-index: 10;
+}
+
+.login-request input {
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding: 14px;
+  width: 240px;
+  height: 42px;
+  font-family: "roboto", sans-serif;
+  font-weight: normal;
+  font-size: 14px;
+  color: #999999;
+  line-height: 24px;
+  border-radius: 5px;
+  border: 1px solid #999999;
+  box-sizing: border-box;
+}
+
+.login-request .login-links {
+  display: inline-block;
+  margin-top: 20px;
+  margin-left: 12px;
+  max-width: 138px;
+  color: #323232;
+  font-size: 13px;
+  line-height: 24px;
+  font-weight: normal;
+  font-family: "roboto", sans-serif;
+}
+
+.login-request .login-btn {
+  display: inline-block;
+  margin-top: 20px;
+  margin-left: 20px;
+  padding: 12px 25px;
+  font-family: "roboto", sans-serif;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  vertical-align: top;
+  text-decoration: none;
+  text-shadow: 0 2px 5px rgba(160, 32, 11, 0.76);
+  background: #f26843;
+  background:    -moz-linear-gradient(top, #f26843 0%, #e74a35 100%);
+  background: -webkit-linear-gradient(top, #f26843 0%, #e74a35 100%);
+  background:         linear-gradient(to bottom, #f26843 0%, #e74a35 100%);
+  border-radius: 100px;
+  border: none;
+  outline: none;
+  box-shadow: 0 2px 2px rgba(172, 16, 0, 0.64);
+}
+
+.login-request .login-btn:hover,
+.login-request .login-btn:focus {
+  background:    -moz-linear-gradient(top, #f58669 0%, #ec6f5e 100%);
+  background: -webkit-linear-gradient(top, #f58669 0%, #ec6f5e 100%);
+  background:         linear-gradient(to bottom, #f58669 0%, #ec6f5e 100%);
+  box-shadow: 0 2px 2px rgba(172, 16, 0, 1);
+}
+
+.login-request .login-btn:active {
+  background:    -moz-linear-gradient(top, #d84732 0%, #e1613e 100%);
+  background: -webkit-linear-gradient(top, #d84732 0%, #e1613e 100%);
+  background:         linear-gradient(to bottom, #d84732 0%, #e1613e 100%);
+  box-shadow: inset 0 2px 2px rgba(172, 16, 0, 1);
 }
 
 .user-blocks .basket {
@@ -434,6 +550,7 @@ h2 {
   border: 2px solid #ffffff;
   border-radius: 50%;
   cursor: pointer;
+  box-sizing: content-box;
 }
 
 #btn-1:checked ~ .site-wrapper #slide1,
@@ -735,6 +852,7 @@ h2 {
   line-height: 22px;
   background-color: #f8f7f4;
   border-radius: 13px;
+  box-sizing: border-box;
 }
 
 .mailing label {
