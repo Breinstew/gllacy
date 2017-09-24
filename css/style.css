@@ -121,9 +121,12 @@ h2 {
   box-sizing: content-box;
 }
 
-.page-navigation > li:hover .sub-catalog {
+.page-navigation > li:hover .sub-catalog,
+.main-catalog:focus ~ .sub-catalog {
   display: block;
 }
+
+
 
 .page-navigation .main-catalog {
   text-decoration: none;
@@ -137,7 +140,15 @@ h2 {
 .page-navigation > li:hover .main-catalog {
   color: #323232;
   background-color: #f7f6f3;
+  outline: none;
 }
+
+.page-navigation .main-catalog:focus {
+  color: #323232;
+  background-color: #f7f6f3;
+  outline: none;
+}
+
 
 /******стилизация подменю Каталог**********/
 .page-navigation .sub-catalog {
@@ -174,6 +185,11 @@ h2 {
 .sub-catalog > li:hover:not(:first-child) {
   position: relative;
   background-color: #fbded8;
+  cursor: pointer;
+}
+
+.sub-catalog > li:active:not(:first-child) {
+  background-color: #f6b5a5;
   cursor: pointer;
 }
 
@@ -261,12 +277,39 @@ h2 {
   padding-bottom: 10px;
   border: 1px solid #999999;
   font-family: "roboto", sans-serif;
-  font-weight: normal;
+  font-weight: bold;
   font-size: 14px;
-  color: #999999;
+  color: #323232;
   line-height: 24px;
   border-radius: 5px;
+  outline: none;
 }
+
+.user-blocks input[id="search-request"]:hover {
+  border: 2px solid #999999;
+  border-radius: 5px;
+  width: 307px;
+  padding-top: 12px;
+  padding-bottom: 10px;
+  padding-left: 13px;
+  margin-bottom: 19px;
+  cursor: pointer;
+}
+
+.user-blocks input[id="search-request"]:focus {
+  border: 2px solid #8fbdec;
+}
+
+.user-blocks input::-webkit-input-placeholder {
+  color: #999999;
+  font-weight: normal;
+}
+
+.user-blocks input::-moz-placeholder {
+  color: #999999;
+  font-weight: normal;
+}
+
 
 .search:hover .search-request,
 .search:focus .search-request {
@@ -349,13 +392,37 @@ h2 {
   width: 240px;
   height: 42px;
   font-family: "roboto", sans-serif;
-  font-weight: normal;
+  font-weight: bold;
   font-size: 14px;
-  color: #999999;
+  color: #323232;
   line-height: 24px;
   border-radius: 5px;
   border: 1px solid #999999;
   box-sizing: border-box;
+}
+
+.login-request input:hover {
+  border: 2px solid #999999;
+  cursor: pointer;
+  width: 238px;
+  padding: 13px;
+}
+
+.login-request input:focus {
+  border: 2px solid #8fbdec;
+  width: 238px;
+  padding: 13px;
+  outline: none;
+}
+
+.login-request input::-webkit-input-placeholder {
+  color: #999999;
+  font-weight: normal;
+}
+
+.login-request input::-moz-placeholder {
+  color: #999999;
+  font-weight: normal;
 }
 
 .login-request .login-links {
@@ -368,6 +435,14 @@ h2 {
   line-height: 24px;
   font-weight: normal;
   font-family: "roboto", sans-serif;
+}
+
+.login-links a {
+  color: #323232;
+}
+
+.login-links a:hover {
+  color: #e84d37;
 }
 
 .login-request .login-btn {
@@ -496,6 +571,22 @@ h2 {
   cursor: pointer;
 }
 
+.main .btn:hover,
+.main .btn:focus {
+  background:    -moz-linear-gradient(top, #f58669 0%, #ec6f5e 100%);
+  background: -webkit-linear-gradient(top, #f58669 0%, #ec6f5e 100%);
+  background:         linear-gradient(to bottom, #f58669 0%, #ec6f5e 100%);
+  box-shadow: 0 2px 2px rgba(172, 16, 0, 1);
+  outline: none;
+}
+
+.main .btn:active {
+  background:    -moz-linear-gradient(top, #d84732 0%, #e1613e 100%);
+  background: -webkit-linear-gradient(top, #d84732 0%, #e1613e 100%);
+  background:         linear-gradient(to bottom, #d84732 0%, #e1613e 100%);
+  box-shadow: inset 0 2px 2px rgba(172, 16, 0, 1);
+}
+
 .main .slide-btn {
   display: inline-block;
   padding: 12px 50px;
@@ -534,7 +625,6 @@ h2 {
   bottom: 23px;
   left: 0px;
   z-index: 20;
-
   font-size: 0;
 }
 
@@ -543,9 +633,7 @@ h2 {
   width: 17px;
   height: 17px;
   margin-right: 8px;
-
   vertical-align: top;
-
   background-color: transparent;
   border: 2px solid #ffffff;
   border-radius: 50%;
@@ -580,6 +668,12 @@ h2 {
   background-color: #ffffff;
 }
 
+#btn-1:hover:not(:checked) ~ .site-wrapper label[for="btn-1"],
+#btn-2:hover:not(:checked) ~ .site-wrapper label[for="btn-2"],
+#btn-3:hover:not(:checked) ~ .site-wrapper label[for="btn-3"] {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
 /******************стилизация тела страницы (баннеры)***************************/
 .banners {
   display: flex;
@@ -604,7 +698,7 @@ h2 {
   padding-top: 13px;
   padding-left: 20px;
   padding-right: 20px;
-  max-width: 560px;
+  width: 560px;
   box-sizing: border-box;
   border-radius: 12px 12px 12px 12px;
 }
@@ -852,32 +946,68 @@ h2 {
   line-height: 22px;
   background-color: #f8f7f4;
   border-radius: 13px;
-  box-sizing: border-box;
-}
+ }
 
 .mailing label {
-  margin-bottom: 30px;
+  margin-bottom: 0px;
   font-family: "roboto", sans-serif;
   font-size: 16px;
   line-height: 22px;
   font-weight: normal;
+  box-sizing: content-box;
 }
 
 .mailing input {
   display: inline-block;
   width: 368px;
   padding-left: 14px;
+  padding-right: 14px;
   padding-top: 10px;
   padding-bottom: 8px;
   box-sizing: border-box;
   margin-top: 34px;
   margin-right: 8px;
   font-size: 16px;
+  font-weight: bold;
   line-height: 24px;
   border-color: #d3d3d2;
   border-width: 1px;
   border-style: solid;
   border-radius: 5px;
+}
+
+.mailing input:hover {
+  border: 2px solid #999999;
+  border-radius: 5px;
+  width: 366px;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  padding-left: 13px;
+  margin-right: 10px;
+  margin-bottom: -2px;
+  cursor: pointer;
+}
+
+.mailing input:focus {
+  border: 2px solid #8fbdec;
+  border-radius: 5px;
+  width: 366px;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  padding-left: 13px;
+  margin-right: 10px;
+  margin-bottom: -2px;
+  outline: none;
+}
+
+.mailing input::-webkit-input-placeholder {
+  color: #999999;
+  font-weight: normal;
+}
+
+.mailing input::-moz-placeholder {
+  color: #999999;
+  font-weight: normal;
 }
 
 .mailing .btn {
@@ -1001,16 +1131,44 @@ h2 {
   background-image: url("../img/tw-icon.png");
 }
 
+.socials .social-btn-tw:hover,
+.socials .social-btn-tw:focus {
+  background-image: url("../img/tw-icon-hover.png");
+  outline: none;
+}
+
+.social-btn:active {
+  box-shadow: inset 0px 2px 1px 0px rgba(136, 136, 136, 1);
+}
+
 .socials .social-btn-inst {
   background-image: url("../img/instg-icon.png");
+}
+
+.socials .social-btn-inst:hover,
+.socials .social-btn-inst:focus {
+  background-image: url("../img/instg-icon-hover.png");
+  outline: none;
 }
 
 .socials .social-btn-fb {
   background-image: url("../img/fb-icon.png");
 }
 
+.socials .social-btn-fb:hover,
+.socials .social-btn-fb:focus {
+  background-image: url("../img/fb-icon-hover.png");
+  outline: none;
+}
+
 .socials .social-btn-vk {
   background-image: url("../img/vk-icon.png");
+}
+
+.socials .social-btn-vk:hover,
+.socials .social-btn-vk:focus  {
+  background-image: url("../img/vk-icon-hover.png");
+  outline: none;
 }
 
 .page-footer .meta {
@@ -1039,6 +1197,16 @@ h2 {
   line-height: 18px;
 }
 
+.meta a:hover,
+.meta a:focus {
+  color: #ffbc9e;
+}
+
+.meta a:hover .underline,
+.meta a:focus .underline{
+  border-color: #ffbc9e;
+}
+
 .meta a:nth-child(2n) {
   margin-left: -8px;
 }
@@ -1058,6 +1226,21 @@ h2 {
 .copyright a {
   color: white;
   text-decoration: none;
+  box-sizing: content-box;
+}
+
+.copyright a:hover,
+.copyright a:focus {
+  color: #ffbc9e;
+}
+
+.copyright a:hover.underline,
+.copyright a:focus.underline {
+  border-color: #ffbc9e;
+}
+
+.copyright p {
+  margin-top: 15px;
 }
 
 .copyright::before {
@@ -1068,4 +1251,248 @@ h2 {
   width: 108px;
   height: 38px;
   background-image: url("../img/html-academy.png");
+}
+
+/*******************Стилизация popup Мы перезвоним *****************/
+.feedback-popup {
+  position: absolute;
+  top: 338px;
+  left: 50%;
+  margin-left: -237px;
+  width: 475px;
+  height: 442px;
+  background-color: #f8f7f4;
+  border-radius: 10px;
+}
+
+.feedback-popup form {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.feedback-popup label {
+  display: none;
+  position: absolute;
+  left: 38px;
+  color: #999999;
+  line-height: 13px;
+  font-size: 11px;
+  font-family: "roboto", sans-serif;
+  font-weight: normal;
+}
+
+.feedback-popup label[for="feedback-name"] {
+  top: 50px;
+}
+
+.feedback-popup label[for="feedback-email"] {
+  top: 112px;
+}
+
+.feedback-popup label[for="feedback-area"] {
+  top: 174px;
+}
+
+.feedback-popup h3 {
+  margin: 0;
+  margin-bottom: 18px;
+  margin-left: 24px;
+  padding-top: 18px; 
+  font-size: 24px;
+  line-height: 28px;
+  font-family: "roboto", sans-serif;
+  font-weight: 500;
+  color: #323232;
+}
+
+.feedback-popup input {
+  margin-left: 24px;
+  margin-right: 24px;
+  margin-bottom: 20px;
+  padding-left: 14px;
+  padding-right: 14px;
+  box-sizing: border-box;
+  width: 266px;
+  height: 42px;
+  border-radius: 5px;
+  border: 1px solid #d3d3d2;
+  font-size: 16px;
+  line-height: 24px;
+  font-family: "roboto", sans-serif;
+  font-weight: bold;
+  color: #323232;
+  outline: none;
+}
+
+.feedback-popup input:hover {
+  border: 2px solid #999999;
+  border-radius: 5px;
+  width: 266px;
+  padding-left: 14px;
+  padding-right: 14px;
+  margin-left: 23px;
+  margin-right: 23px;
+  cursor: pointer;
+}
+
+.feedback-popup input:focus {
+  border: 2px solid #8fbdec;
+  border-radius: 5px;
+  width: 266px;
+  padding-left: 14px;
+  padding-right: 14px;
+  margin-left: 23px;
+  margin-right: 23px;
+}
+
+.feedback-popup input:focus + label {
+  display: block;
+  color: #5b9ddf;
+}
+
+.feedback-popup input:valid:not(:focus) + label {
+  color: #999999;
+  display: block;
+}
+
+.feedback-popup input::-webkit-input-placeholder {
+  color: #999999;
+  font-weight: normal;
+}
+
+.feedback-popup input:focus::-webkit-input-placeholder {
+  color: transparent;
+} 
+
+.feedback-popup input::-moz-placeholder {
+  color: #999999;
+  font-weight: normal;
+}
+
+.feedback-popup input:focus::-moz-placeholder {
+  color: transparent;
+}
+
+.feedback-popup .feedback-area {
+  margin-left: 24px;
+  margin-right: 24px;
+  margin-bottom: 25px;
+  padding-left: 14px;
+  padding-right: 14px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  width: 426px;
+  height: 153px;
+  box-sizing: border-box;
+  resize: none;
+  border-radius: 5px;
+  border: 1px solid #d3d3d2;
+  font-size: 16px;
+  line-height: 24px;
+  font-family: "roboto", sans-serif;
+  font-weight: bold;
+  color: #323232;
+  outline: none;
+}
+
+.feedback-popup .feedback-area::-webkit-input-placeholder {
+  color: #999999;
+  font-weight: normal;
+}
+
+.feedback-popup .feedback-area:focus::-webkit-input-placeholder {
+  color: transparent;
+} 
+
+.feedback-popup .feedback-area::-moz-placeholder {
+  color: #999999;
+  font-weight: normal;
+}
+
+.feedback-popup .feedback-area:focus::-moz-placeholder{
+  color: transparent;
+}
+
+.feedback-popup .feedback-area:hover {
+  border: 2px solid #999999;
+  padding-left: 13px;
+  padding-right: 13px;
+  padding-top: 11px;
+  padding-bottom: 11px;
+  cursor: pointer;
+}
+
+.feedback-popup .feedback-area:focus {
+  border: 2px solid #8fbdec;
+  padding-left: 13px;
+  padding-right: 13px;
+  padding-top: 11px;
+  padding-bottom: 11px;
+}
+
+.feedback-popup .feedback-area:focus + label {
+  display: block;
+  color: #5b9ddf;
+}
+
+.feedback-popup .feedback-area:valid:not(:focus) + label {
+  display: block;
+  color: #999999;
+}
+
+
+.feedback-popup .feedback-button {
+  padding-left: 18px;
+  padding-right: 18px;
+  margin-right: 24px;
+  margin-left: auto;
+  box-sizing: border-box;
+  width: 139px;
+  height: 44px;
+  border-radius: 100px;
+  background: #f26843;
+  background: linear-gradient( to top, rgb(231,74,53) 0%, rgb(242,104,67) 100%);
+  font-family: "roboto", sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 0 2px 5px rgba(160, 32, 11, 0.76);
+  box-shadow: 0 2px 2px rgba(172, 16, 0, 0.64);
+  color: white;
+  border: none;
+}
+
+.feedback-popup .close{
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  opacity: 1;
+}
+
+.feedback-popup .close::before,
+.feedback-popup .close::after {
+  content: "";
+  position: absolute;
+  top: 12px;
+  left: 0px;
+  width: 24px;
+  height: 2px;
+  background: #121212;
+  opacity: 1;
+  cursor: pointer;
+ }
+
+.feedback-popup .close::before {
+  webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.feedback-popup .close::after {
+  webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
 }
