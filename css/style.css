@@ -770,6 +770,8 @@ h2 {
   background-image: url("../img/hit-icon.jpg");
   left: 0;
   border-radius: 50%;
+  z-index: 3;
+  cursor: pointer;
 }
 
 .hits img {
@@ -803,6 +805,60 @@ h2 {
   /*text-decoration: underline;
   text-decoration-color: rgba(255,255,255,0.2);*/
 }
+
+.hits a {
+  position: absolute;
+  visibility: hidden;
+  top: 335px;
+  left: 35px;
+  display: inline-block;
+  padding: 11px 12px;
+  background: #f26843;
+  background: linear-gradient( to top, rgb(231,74,53) 0%, rgb(242,104,67) 100%);
+  font-family: "roboto", sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 22px;
+  text-shadow: 0 2px 5px rgba(160, 32, 11, 0.76);
+  box-shadow: 0 2px 2px rgba(172, 16, 0, 0.64);
+  z-index: 2;
+}
+
+.hits .background-interactive {
+  position: absolute;
+  visibility: hidden;
+  top: -5px;
+  left: -13px;
+  width: 293px;
+  height: 405px;
+  background-color: white;
+  opacity: 0.3; 
+  border-radius: 5px;
+  box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.hits li:hover .background-interactive,
+.hits li:hover a {
+  visibility: visible;
+  cursor: pointer;
+}
+
+.hits li:hover img,
+.hits li:hover p
+ {
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.hits li:hover b {
+  z-index: 2;
+  cursor: pointer;
+}
+
 
 .underline {
   border-bottom: 1px solid rgba(255,255,255,0.2);
@@ -917,6 +973,7 @@ h2 {
   line-height: 30px;
   font-weight: bold;
   text-decoration: underline;
+  cursor: pointer;
 }
 
 /******************стилизация тела страницы (mailing)*******************************/
@@ -1255,6 +1312,7 @@ h2 {
 
 /*******************Стилизация popup Мы перезвоним *****************/
 .feedback-popup {
+  display: none;
   position: absolute;
   top: 338px;
   left: 50%;
