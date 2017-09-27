@@ -4,8 +4,61 @@
   <meta charset="UTF-8">
   <title>Каталог</title>
   <link href="css/normalize.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
+  <div class="content-wrapper">
+    <header class="page-header">
+        <section class="header-top">
+            <a class="header-logo" href="index.html">
+              <img src="img/logo.png" width="154" height="64" alt="Логотип">
+            </a>
+            <nav>
+              <ul class="page-navigation">
+                <li>
+                  <a class="main-catalog" href="#"><span class="underline">Каталог</span></a>
+                </li>
+                <li>
+                  <a class="main-catalog" href="#"><span class="underline">Доставка и оплата</span></a>
+                </li>
+                <li>
+                  <a class="main-catalog" href="#"><pan class="underline">О Компании</span></a>
+                </li>
+              </ul>
+            </nav>
+            <div class="user-blocks">
+              <label for="search-request" class="search" tabindex="0">Поиск
+                <div class="search-request">
+                  <input type="search" name="search-request" id="search-request" placeholder="Что ищем?">
+                </div>
+              </label>
+              <a class="login" href="#">Вход</a>
+              
+              <form class="login-request" action="index.html" method="post">
+                <input type="email" name="email-field" placeholder="Электронная почта">
+                <input type="password" name="password-field" placeholder="Пароль">
+                <button class="login-btn" type="button" name="button">Войти</button>
+                <div class="login-links">
+                  <a href="#">Забыли пароль?</a>
+                  <a href="#">Новая регистрация</a>
+                </div>
+              </form>
+  
+              <a class="basket" href="#">Пусто</a>
+            </div>
+        </section>
+        <section class="header-bottom-items">
+            <ul class="breadcrumbs">
+                <li><a href="#" class="underline">Главная</a></li>
+                <li><a href="#" class="underline">Каталог</a></li>
+                <li><a>Сливочное</a></li>
+            </ul>
+            <section class="header-bottom">
+                <p class="work-time">С 10 до 20, ежедневно</p>
+                <p class="phone-number">8 812 450-25-25</p>
+            </section>
+        </section>
+    </header>
+  </div>  
 </body>
 </html>

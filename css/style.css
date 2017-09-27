@@ -541,6 +541,32 @@ h2 {
   font-weight: bold;
   color: inherit;
 }
+
+.page-header .header-bottom-items {
+  display: flex;
+  justify-content: space-between;
+}
+
+.page-header .breadcrumbs {
+  display: inline-flex;
+  align-items: flex-end;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.page-header .breadcrumbs li {
+  margin-right: 22px;
+}
+
+.page-header .breadcrumbs a {
+  font-family: "roboto", sans-serif;
+  font-size: 14px;
+  line-height: 16px;
+  text-decoration: none;
+  color: inherit;
+}
+
 /************************ стилизация тела страницы (слайдер) ******************/
 .main .slider {
   position: relative;
