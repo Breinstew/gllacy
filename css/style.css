@@ -32,10 +32,21 @@ body > input[type="radio"] {
 
 h1 {
   margin: 0;
+  padding: 0;
   font-family: "roboto", sans-serif;
   font-weight: bold;
   font-size: 60px;
   line-height: 60.35px;
+}
+
+.catalog h1 {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 28px;
+  font-family: "roboto", sans-serif;
+  font-weight: bold;
+  font-size: 35px;
+  line-height: 41px;
 }
 
 h2 {
@@ -146,6 +157,13 @@ h2 {
 .page-navigation .main-catalog:focus {
   color: #323232;
   background-color: #f7f6f3;
+  outline: none;
+}
+
+.page-navigation .active,
+.page-navigation > li:hover .active {
+  color: inherit;
+  background-color: #d07058;
   outline: none;
 }
 
@@ -542,6 +560,8 @@ h2 {
   color: inherit;
 }
 
+/************************ стилизация breadcrumbs в catalog.html ******************/
+
 .page-header .header-bottom-items {
   display: flex;
   justify-content: space-between;
@@ -556,8 +576,38 @@ h2 {
 }
 
 .page-header .breadcrumbs li {
+  position: relative;
   margin-right: 22px;
 }
+
+
+/**********стрелка********************************************/
+.breadcrumbs li:not(:first-child)::before {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  top: 35%;
+  left: -17px;
+  border-bottom: 1px solid white;
+  border-right: 1px solid white;
+  box-sizing: border-box;
+  transform: rotate(315deg);
+}
+
+.breadcrumbs li:not(:first-child)::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  top: 35%;
+  left: -14px;
+  border-bottom: 1px solid white;
+  border-right: 1px solid white;
+  box-sizing: border-box;
+  transform: rotate(315deg);
+}
+/******************************************************/
 
 .page-header .breadcrumbs a {
   font-family: "roboto", sans-serif;
@@ -565,6 +615,13 @@ h2 {
   line-height: 16px;
   text-decoration: none;
   color: inherit;
+}
+.breadcrumbs li:not(:last-child) a:hover {
+  color: #ffbc9e;
+}
+
+.breadcrumbs li:not(:last-child) a:hover.underline {
+  border-color: #ffbc9e;
 }
 
 /************************ стилизация тела страницы (слайдер) ******************/
@@ -1579,4 +1636,23 @@ h2 {
 .feedback-popup .close::after {
   webkit-transform: rotate(-45deg);
   transform: rotate(-45deg);
+}
+
+/*****************************************************
+******** Стилизация каталога main**************************
+******************************************************/
+
+.parameters {
+  display: flex;
+  flex-wrap: wrap;
+  width: 880px;
+}
+
+.parameter-title {
+  display: block;
+  margin-bottom: 7px;
+  font-family: "roboto", sans-serif;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 500;
 }

@@ -6,7 +6,7 @@
   <link href="css/normalize.css" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="catalog">
   <div class="content-wrapper">
     <header class="page-header">
         <section class="header-top">
@@ -16,7 +16,7 @@
             <nav>
               <ul class="page-navigation">
                 <li>
-                  <a class="main-catalog" href="#"><span class="underline">Каталог</span></a>
+                  <a class="main-catalog active"><span>Каталог</span></a>
                 </li>
                 <li>
                   <a class="main-catalog" href="#"><span class="underline">Доставка и оплата</span></a>
@@ -59,6 +59,80 @@
             </section>
         </section>
     </header>
+    <main>
+      <h1>Сливочное мороженое</h1>
+      <form action="#" method="post" class="parameters">
+        <div class="sorting">
+          <label for="sorting" class="parameter-title">Сортировка:</label>
+          <select name="sorting" id="sorting" class="field-item">
+            <option value="1">по популярности</option>
+            <option value="2">сначала недорогие</option>
+            <option value="3">сначала дорогие</option>
+            <option value="4">по жирности</option>
+          </select>
+        </div>
+        <div class="cost">
+          <label class="parameter-title">Цена:</label>
+          <input type="number" name="cost-min">
+          <input type="number" name="cost-max">
+          <div class="field-range field-item">
+            <div class="all-range">
+              <div class="choice-range">
+                <div class="min-pointer"></div>
+                <div class="max-pointer"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="fatness">
+          <label class="parameter-title">Жирность:</label>
+          <div class="field-item">
+            <label>
+                <input type="radio" name="fatness" value="0">
+                0%
+            </label>
+            <label>
+                <input type="radio" name="fatness" value="10" checked>
+                до 10%
+            </label>
+            <label>
+                <input type="radio" name="fatness" value="30">
+                до 30%
+            </label>
+            <label>
+                <input type="radio" name="fatness" value="100">
+                выше 30%
+            </label>
+          </div>
+        </div>
+        <div class="staffing">
+          <label class="parameter-title">Наполнители:</label>
+          <div class="field-item">
+              <label>
+                  <input type="checkbox" name="chocolate" checked>
+                  шоколадные
+              </label>
+              <label>
+                  <input type="checkbox" name="shugar" checked>
+                  сахарные присыпки
+              </label>
+              <label>
+                  <input type="checkbox" name="fruit">
+                  фрукты
+              </label>
+              <label>
+                  <input type="checkbox" name="syrup">
+                  сиропы
+              </label>
+              <label>
+                  <input type="checkbox" name="jam">
+                  джемы
+              </label>
+          </div>
+        </div>
+        <button type="submit">Применить</button>
+      </form>
+    </main>
   </div>  
 </body>
 </html>
