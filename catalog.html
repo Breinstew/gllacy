@@ -70,11 +70,15 @@
             <option value="3">сначала дорогие</option>
             <option value="4">по жирности</option>
           </select>
+          <span class="arrow-down"></span>
         </div>
         <div class="cost">
           <label class="parameter-title">Цена:</label>
-          <input type="number" name="cost-min">
-          <input type="number" name="cost-max">
+          <input type="text" name="cost-min" value="100">
+          <span class="currency">руб.</span>
+          <span class="currency">&#x2012;</span>
+          <input type="text" name="cost-max" value="500">
+          <span class="currency">руб.</span>
           <div class="field-range field-item">
             <div class="all-range">
               <div class="choice-range">
@@ -92,7 +96,7 @@
                 0%
             </label>
             <label>
-                <input type="radio" name="fatness" value="10" checked>
+                <input type="radio" name="fatness" value="10">
                 до 10%
             </label>
             <label>

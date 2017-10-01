@@ -1649,15 +1649,15 @@ h2 {
 }
 
 .parameters .field-item {
-  height: 36px;
   margin-right: 15px;
   margin-bottom: 18px;
-  padding: 9px 15px;
+  padding: 16px 15px;
   background: rgba(255, 255, 255, 0.2);
   color: inherit;
   font-family: "roboto", sans-serif;
   font-size: 16px;
   line-height: 18px;
+  font-weight: 500;
   outline: none;
   border: none;
   border-radius: 16px;
@@ -1666,17 +1666,21 @@ h2 {
 }
 
 .sorting .field-item {
+  height: 36px;
+  width: 193px;
+  box-sizing: border-box;
   padding-top: 0;
   padding-bottom: 0;
   -moz-appearance: none;
   -webkit-appearance: none;
   -ms-appearance: none;
   appearance: none;
+  cursor: pointer;
 }
 
- .sorting .field-item {
+ .sorting {
    position: relative;
-}
+  }
 
 
 .sorting .field-item:focus {
@@ -1684,8 +1688,33 @@ h2 {
   color: #323232;
 }
 
+.sorting .arrow-down {
+  position: absolute;
+  top: 40px;
+  right: 30px;
+  width: 7px;
+  height: 7px;
+  background: url("../img/marker.png") no-repeat;
+  box-sizing: border-box;
 }
-.parameter-title {
+
+.field-item:focus ~ .arrow-down {
+  background: url("../img/marker-focus.png") no-repeat;
+}
+
+
+.parameters .parameter-title {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 5px;
+  font-family: "roboto", sans-serif;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 500;
+}
+
+.sorting .parameter-title {
   display: block;
   margin-bottom: 7px;
   font-family: "roboto", sans-serif;
@@ -1694,6 +1723,96 @@ h2 {
   font-weight: 500;
 }
 
+.cost {
+  width: 220px;
+  margin-right: 15px;
+  box-sizing: border-box;
+}
+
 .cost .parameter-title {
-  display: inline;
+  display: inline-block;
+}
+
+.cost .currency {
+  padding: 0;
+  font-family: "roboto", sans-serif;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 500;
+}
+
+.cost input {
+  width: 26px;
+  font-family: "roboto", sans-serif;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 500;
+  color: white;
+  background: transparent;
+  border: none;
+}
+
+.cost .field-item {
+  width: 218px;
+}
+
+/********** убрать стрелки у number**********/
+.cost input[type=number]::-webkit-inner-spin-button, 
+.cost input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+/****************************************************/
+
+.cost .all-range {
+  padding: 0;
+  height: 4px;
+  width: 100%;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.cost .choice-range {
+  position: relative;
+  margin-left: 30px;
+  height: 4px;
+  width: 50%;
+  box-sizing: border-box;
+  background: white;
+}
+
+.cost .min-pointer,
+.cost .max-pointer {
+  position: absolute;
+  top: -8px;
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.cost .max-pointer {
+  right: 0;
+}
+
+.fatness {
+  width: 420px;
+  padding: 0;
+  height: 36px;
+}
+
+.fatness label {
+  margin: 0;
+  padding: 0;
+  font-family: "roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 18px;
+}
+
+.fatness .field-item {
+  padding: 8px 15px;
+  width: 100%;
+  height: 100%;
 }
