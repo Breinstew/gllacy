@@ -1849,7 +1849,7 @@ h2 {
 
 .fatness .circle::after {
   content: "";
-  left: 20%;
+  left: 22%;
   top: 20%;
   position: absolute;
   width: 8px;
