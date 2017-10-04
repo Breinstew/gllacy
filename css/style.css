@@ -934,8 +934,7 @@ h2 {
 }
 
 .hits li:hover img,
-.hits li:hover p
- {
+.hits li:hover p {
   position: relative;
   z-index: 2;
   cursor: pointer;
@@ -1960,7 +1959,8 @@ h2 {
   cursor: pointer;
 }
 
-.parameters button:hover {
+.parameters button:hover,
+.parameters button:focus {
   color: #323232;
   background: rgba(255, 255, 255, 1);
 }
@@ -1973,6 +1973,10 @@ h2 {
 }
 
 /*************************************hits catalog**********/
+.catalog .hits {
+  margin-bottom: 100px;
+}
+
 .catalog .hits li::before {
   display: none;
 }
@@ -1981,4 +1985,74 @@ h2 {
   margin-bottom: 30px;
 }
 
+.paginator ul {
+  width: 175px;;
+  list-style: none;
+  display: flex;
+  margin-right: 25px;
+  margin-left: auto;
+  margin-bottom: 30px;
+}
+
+.paginator li {
+  margin-right: 0px;
+  margin-left: auto;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.paginator a {
+  display: block;
+  width: 25px;
+  height: 25px;
+  padding: 3px;
+  text-decoration: none;
+  text-align: center;
+  color: white;
+  font-family: "roboto", sans-serif;
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 500;
+  border-radius: 50%;
+}
+
+.paginator li:not(:first-child):not(:last-child) a:hover,
+.paginator li:not(:first-child):not(:last-child) a:focus {
+  color: white;
+  background: rgba(255, 255, 255, 0.2);
+  outline: none;
+}
+
+.paginator li:not(:first-child):not(:last-child) a:active,
+.paginator .active-page,
+.paginator li:not(:first-child):not(:last-child) .active-page:hover {
+   color: #323232;
+   background-color: white;
+}
+
+.paginator .back {
+  width: 9px;
+  height: 9px;
+  padding: 3px;
+  border-left: 1px solid white;
+  border-bottom: 1px solid white;
+  border-radius: 0;
+  transform: rotate(45deg) translateY(10px);
+  cursor: default;
+  opacity: 0.2;
+}
+
+.paginator .next {
+  width: 9px;
+  height: 9px;
+  padding: 3px;
+  border-right: 2px solid white;
+  border-bottom: 2px solid white;
+  border-radius: 0;
+  transform: rotate(-45deg) translateY(10px);
+}
+
+.paginator {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
 
