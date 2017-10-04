@@ -647,7 +647,8 @@ h2 {
   text-align: center;
 }
 
-.main .btn {
+.main .btn,
+.catalog .btn {
   font-family: "roboto", sans-serif;
   text-decoration: none;
   color: inherit;
@@ -655,7 +656,9 @@ h2 {
 }
 
 .main .btn:hover,
-.main .btn:focus {
+.catalog .btn:hover,
+.main .btn:focus,
+.catalog .btn:focus {
   background:    -moz-linear-gradient(top, #f58669 0%, #ec6f5e 100%);
   background: -webkit-linear-gradient(top, #f58669 0%, #ec6f5e 100%);
   background:         linear-gradient(to bottom, #f58669 0%, #ec6f5e 100%);
@@ -663,7 +666,8 @@ h2 {
   outline: none;
 }
 
-.main .btn:active {
+.main .btn:active,
+.catalog .btn:active {
   background:    -moz-linear-gradient(top, #d84732 0%, #e1613e 100%);
   background: -webkit-linear-gradient(top, #d84732 0%, #e1613e 100%);
   background:         linear-gradient(to bottom, #d84732 0%, #e1613e 100%);
@@ -835,6 +839,7 @@ h2 {
 .hits ul {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -896,7 +901,6 @@ h2 {
   left: 35px;
   display: inline-block;
   padding: 11px 12px;
-  background: #f26843;
   background: linear-gradient( to top, rgb(231,74,53) 0%, rgb(242,104,67) 100%);
   font-family: "roboto", sans-serif;
   font-size: 18px;
@@ -1646,6 +1650,7 @@ h2 {
   display: flex;
   flex-wrap: wrap;
   width: 880px;
+  margin-bottom: 40px;
 }
 
 .parameters .field-item {
@@ -1682,7 +1687,7 @@ h2 {
    position: relative;
   }
 
-
+.sorting .field-item:hover,
 .sorting .field-item:focus {
   background: white;
   color: #323232;
@@ -1813,7 +1818,8 @@ h2 {
   line-height: 18px;
 }
 
-.fatness .field-item {
+.fatness .field-item,
+.staffing .field-item {
   display: flex;
   flex-wrap: wrap;
   padding: 8px 0px;
@@ -1821,7 +1827,8 @@ h2 {
   height: 100%;
 }
 
-.fatness input[type="radio"] {
+.fatness input[type="radio"],
+.staffing input[type="checkbox"] {
   display: none;
 }
 /***********стилизация радиокнопки******/
@@ -1832,8 +1839,13 @@ h2 {
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  border: 2px solid #f8f7f4;
+  border: 1px solid #f8f7f4;
   box-sizing: border-box;
+  cursor: pointer;
+}
+
+.fatness label[for*="value"]:hover::before {
+  border: 2px solid #f8f7f4;
 }
 
 .fatness .circle {
@@ -1845,6 +1857,7 @@ h2 {
   border-radius: 50%;
   border: 2px solid #f8f7f4;
   box-sizing: border-box;
+  cursor: pointer;
 }
 
 .fatness .circle::after {
@@ -1859,7 +1872,113 @@ h2 {
   box-sizing: border-box;
 }
 
-/**********************************/
 .fatness input[type="radio"]:checked + label .circle {
   visibility: visible;
 }
+
+/**********************************/
+
+.staffing {
+  width: 702px;
+  padding: 0;
+  height: 36px;
+}
+
+.staffing label {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  margin-left: 52px;
+  font-family: "roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 18px;
+}
+
+/***********стилизация чекбокса******/
+.staffing label:not(.parameter-title)::before {
+  content: "";
+  position: absolute;
+  left: -30px;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #f8f7f4;
+  box-sizing: border-box;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.staffing label:not(.parameter-title):hover::before {
+  border: 2px solid #f8f7f4;
+
+}
+
+.staffing .box {
+  visibility: hidden;
+  position: absolute;
+  left: -30px;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #f8f7f4;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.staffing .box::after {
+  content: "";
+  position: absolute;
+  left: 22%;
+  margin: 2px;
+  width: 6px;
+  height: 10px;
+  box-sizing: border-box;
+  border-bottom: 3px solid #f8f7f4;
+  border-right: 3px solid #f8f7f4;
+  transform: rotate(45deg);
+}
+
+.staffing input[type="checkbox"]:checked + label .box {
+  visibility: visible;
+}
+/**********************************/
+.parameters button {
+  margin-top: 22px;
+  margin-left: 15px;
+  padding-left: 30px;
+  padding-right: 30px;
+  height: 36px;
+  border: 2px solid #f8f7f4;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.2);
+  color: inherit;
+  font-family: "roboto", sans-serif;
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 500;
+  outline: none;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.parameters button:hover {
+  color: #323232;
+  background: rgba(255, 255, 255, 1);
+}
+
+.parameters button:active {
+  box-shadow: inset 0 2px 2px #323232;
+  border: none;
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+/*************************************hits catalog**********/
+.catalog .hits li::before {
+  display: none;
+}
+
+.catalog .hits li {
+  margin-bottom: 30px;
+}
+
+
