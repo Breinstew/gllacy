@@ -1397,6 +1397,8 @@ h2 {
 }
 
 /*******************Стилизация popup Мы перезвоним *****************/
+
+
 .feedback-popup {
   display: none;
   position: absolute;
@@ -1407,6 +1409,7 @@ h2 {
   height: 442px;
   background-color: #f8f7f4;
   border-radius: 10px;
+  z-index: 10;
 }
 
 .feedback-popup form {
@@ -1639,6 +1642,10 @@ h2 {
 .feedback-popup .close::after {
   webkit-transform: rotate(-45deg);
   transform: rotate(-45deg);
+}
+
+.modal-content-show {
+  display: block;
 }
 
 /*****************************************************
